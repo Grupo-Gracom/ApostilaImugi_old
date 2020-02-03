@@ -6,6 +6,7 @@
             $q = $this->db->get();
         
             $final = array();
+            //compara menu id de itens com id_menu de menu
             if ($q->num_rows() > 0) {
                 foreach ($q->result() as $row) {
         

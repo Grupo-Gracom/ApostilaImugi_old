@@ -13,7 +13,7 @@
    
     <!-- jquery
 		============================================ -->
-        <script src="<?php echo base_url();?>assets/js/vendor/jquery-1.12.4.min.js"></script>
+    
     <!-- bootstrap JS
 		============================================ -->
     <script src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script>
@@ -77,6 +77,23 @@
     <!-- tawk chat JS
 		============================================ -->
     <!-- <script src="<?php echo base_url();?>assets/js/tawk-chat.js"></script> -->
+
+    <script>
+        var unidade = $(".blog-details-inner h3").attr("data-unidade");
+        var item = $(".blog-details-inner h3").attr("data-item");
+        
+        $('.sidebar-nav li a[data-unidade="'+unidade+'"]').attr("aria-expanded",true);
+        $('.sidebar-nav li a[data-unidade="'+unidade+'"] + ul').attr("aria-expanded",true).addClass("show");
+        $('.sidebar-nav li[data-unidade="'+unidade+'"] > a').addClass("active");
+
+        $('.sidebar-nav li a[data-unidade="'+unidade+'"].active + ul li a[data-item="'+item+'"]').css({"color":"white", "background":"#7dc242"})
+
+        $('.sidebar-nav li').click(function(){
+          $('.sidebar-nav li > a').removeClass("active");
+          $(this).addClass("active");
+        })
+
+    </script>
 </body>
 
 </html>

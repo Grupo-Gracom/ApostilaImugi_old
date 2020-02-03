@@ -19,7 +19,7 @@
                                             <h1><a class="blog-ht" href="#">Seja Bem Vindo ao Play GO</a></h1>
                                             <hr>
                                             <div class="col-md-6">
-                                            <video controls src="<?php echo base_url();?>assets/video/intro_playgo.mp4" style="width:100%;"></video>
+                                            <video controls controlsList="nodownload" disablePictureInPicture src="<?php echo base_url();?>assets/video/intro_playgo.mp4" style="width:100%;"></video>
                                             </div>
                                             <div class="col-md-6">
                                                 <p>Curso projetado para artistas ou amadores que procuram treinamento de efeitos gráficos e visuais ensinado interdisciplinarmente com a língua inglesa.

@@ -2,25 +2,42 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Exercicio extends CI_Controller {
-    public function exercicio(){
+    public function exercicioAction(){
         $this->load->model('atividade_model');
-        
-        if (isset($_POST['submit'])){
-            $resposta_a = $this->imput->post["resposta_a"];
-            $resposta_b = $this->imput->post["resposta_b"];
-            $resposta_c = $this->imput->post["resposta_c"];
-            $resposta_d = $this->imput->post["resposta_d"];
-            $resposta_e = $this->imput->post["resposta_e"];
-            $resposta_f = $this->imput->post["resposta_f"];
+        $urlFormulario = $_POST["urlFormulario"]; 
+        $usuario_id = $_POST["usuario_id"];
+        $atividade_id = $_POST["atividade_id"];
+        $unidade_id = $_POST["unidade_id"];
+        $respostas_respostas = $_POST["respostas_respostas"];                
+        $resposta_data = $_POST["resposta_data"];
+        $resposta_hora = $_POST["resposta_hora"];
+        $resposta_id = $_POST["resposta_id"];
+        $query = array(
+            'usuario_id' => "$usuario_id",
+            'unidade_id' => "$unidade_id",
+            'atividade_id'=> "$atividade_id",
+            'resposta_respostas'=> "$respostas_respostas",
+            'resposta_data'=> "$resposta_data",
+            'resposta_hora'=> "$resposta_hora"
+                                
+            );
 
-            $data = array('resposta_a'=>$resposta_a,
-                        'resposta_b'=>$resposta_b,
-                        'resposta_c'=>$resposta_c,
-                        'resposta_d'=>$resposta_d,
-                        'resposta_e'=>$resposta_e,
-                        'resposta_f'=>$resposta_f);
-                        /* $this->atividade_model->inserir($data); */
-            var_dump($data);
+        if($this->atividade_model->verificaExistencia($resposta_id) == true){
+            $this->atividade_model->update($resposta_id, $query);
+            // echo $controlerFornecedor;
+            // redirect($urlFormulario); 
+            echo "fez update";
+            // echo $resposta_hora;
+        }else{
+            $this->atividade_model->inserir($query);
+            // redirect($urlFormulario);
+            echo "fez insert";
+            // echo $resposta_hora;
         }
+            
+            // var_dump($query);           
+        // }
+        // echo $respostas;
+        // $this->load->view("playgo/unidade$unidade/grammar/index.php");
     }
 }

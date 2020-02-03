@@ -5,52 +5,86 @@ class Conteudo extends CI_Controller {
 
     public function __construct(){
         parent::__construct();
-        $this->load->model('menu_model');
+        session_start();
+        if( ! isset ($_SESSION["matricula"])){
+            $this->matricula = 0 ;
+        }else{
+            $this->matricula = $_SESSION["matricula"];
+        }            
+        $this->load->model('atividade_model');  
+        $this->id = $this->uri->segment(3);      
+        $respostas = $this->atividade_model->consultar($this->matricula);
+        // if(empty($respostas)) validada se string está vazia        
+        $quantUnidades = 8;        
+        $this->data = array(            
+            'quantUnidades' => $quantUnidades,
+            'respostas' => $respostas,
+            'id' => $this->id,
+            'user' => $this->matricula
+        );      
     }
+
+    // public $quantUnidades = 32;
+    // public $menus = $this->menu_model->menus();
+    // public $data = array('menus' => $menus, 'quantUnidades' => $quantUnidades);
 
 	public function index()
-	{
-        $menus = $this->menu_model->menus();
-        $data = array('menus' => $menus);
+	{   
+        if($this->matricula > 0){
         $this->load->view('template/header.php');
-        $this->load->view('template/menu/sidebar.php', $data);
+        $this->load->view('template/menu/sidebar.php', $this->data);
         $this->load->view('playgo/introducao/index.php');
         $this->load->view('template/footer.php');
+        }else{
+            redirect($urlFormulario);
+        }
     }
     
-    public function vocabulary(){
-        $menus = $this->menu_model->menus();
-        $data = array('menus' => $menus);
-        $this->load->view('template/header.php');
-        $this->load->view('template/menu/sidebar.php', $data);
-        $this->load->view('playgo/unidade1/vocabulary/index.php');
-        $this->load->view('template/footer.php');
+    public function vocabulary()
+    {                   
+        if($this->matricula > 0){ 
+            $this->load->view('template/header.php');
+            $this->load->view('template/menu/sidebar.php', $this->data);
+            $this->load->view("playgo/unidade$this->id/vocabulary/index.php");
+            $this->load->view('template/footer.php');
+        }else{
+            redirect($urlFormulario);        
+        }
     }
 
-    public function grammar(){
-        $menus = $this->menu_model->menus();
-        $data = array('menus' => $menus);
-        $this->load->view('template/header.php');
-        $this->load->view('template/menu/sidebar.php', $data);
-        $this->load->view('playgo/unidade1/grammar/index.php');
-        $this->load->view('template/footer.php');
+    public function grammar()
+    {    
+        if($this->matricula > 0){
+            $this->load->view('template/header.php');
+            $this->load->view('template/menu/sidebar.php', $this->data);
+            $this->load->view("playgo/unidade$this->id/grammar/index.php");
+            $this->load->view('template/footer.php');
+        }else{
+            redirect($urlFormulario);
+        }
     }
 
-    public function listening(){
-        $menus = $this->menu_model->menus();
-        $data = array('menus' => $menus);
-        $this->load->view('template/header.php');
-        $this->load->view('template/menu/sidebar.php', $data);
-        $this->load->view('playgo/unidade1/listening/index.php');
-        $this->load->view('template/footer.php');
+    public function listening()
+    {    
+        if($this->matricula > 0){   
+            $this->load->view('template/header.php');
+            $this->load->view('template/menu/sidebar.php', $this->data);
+            $this->load->view("playgo/unidade$this->id/listening/index.php");
+            $this->load->view('template/footer.php');
+        }else{
+            redirect($urlFormulario);
+        }
     }
 
-    public function understanding(){
-        $menus = $this->menu_model->menus();
-        $data = array('menus' => $menus);
-        $this->load->view('template/header.php');
-        $this->load->view('template/menu/sidebar.php', $data);
-        $this->load->view('playgo/unidade1/understanding/index.php');
-        $this->load->view('template/footer.php');
+    public function understanding()
+    {
+        if($this->matricula > 0){
+            $this->load->view('template/header.php');
+            $this->load->view('template/menu/sidebar.php', $this->data);
+            $this->load->view("playgo/unidade$this->id/understanding/index.php");
+            $this->load->view('template/footer.php');
+        }else{
+            redirect($urlFormulario);
+        }
     }
 }

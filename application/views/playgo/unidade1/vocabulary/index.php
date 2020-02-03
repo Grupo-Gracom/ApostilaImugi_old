@@ -1,32 +1,3 @@
-<div class="breadcome-area">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <div class="breadcome-list single-page-breadcome">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                        <div class="breadcome-heading">
-                                            <form role="search" class="sr-input-func">
-                                                <input type="text" placeholder="Search..." class="search-int form-control">
-                                                <a href="#"><i class="fa fa-search"></i></a>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                        <ul class="breadcome-menu">
-                                            <li><a href="#">Home</a> <span class="bread-slash">/</span>
-                                            </li>
-                                            <li><span class="bread-blod">Course Info</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="blog-details-area mg-b-15">
             <div class="container-fluid">
                 <div class="row">
@@ -38,44 +9,44 @@
                                         <div class="blog-details blog-sig-details">
                                             <div class="blog-details blog-sig-details">
                                                 
-                                                <h3 class="blue">UNIT 01 - INTRODUCTION TO GRAPHIC DESIGN PRODUCTION
+                                                <h3 class="blue" data-unidade="<?php echo $id?>" data-item="1">UNIT 01 - INTRODUCTION TO GRAPHIC DESIGN PRODUCTION
                                                 </h3>
                                                 <hr>
                                             </div>
                                             <p>
                                             <span class="blue"><strong> Lesson Goal: </strong> </span> Permit a communication-friendly environment in order to make students feel
-comfortable in their first class while exploring their understanding of graphic design production, its applications and the demand for professionals in the market.
+                                            comfortable in their first class while exploring their understanding of graphic design production, its applications and the demand for 
+                                            professionals in the market.
                                             </p>
                                             <h4 class="blue" style="margin-top:20px;"> <strong> 1.VOCABULARY </strong> 
                                                     <audio controls controlsList="nodownload">
                                                         <source src="<?php echo base_url(); ?>assets/audio/unit1/vocabulary/vocabulary.ogg" type="audio/ogg">
                                                     </audio>
-                                        </h4>
-                                            <div class="col-md-2"></div>
-                                            <div class="col-md-1">
-                                               WELCOME
-                                            </div>
-                                            <div class="col-md-1">
-                                                WORK
-                                            </div>
-                                            <div class="col-md-1">
-                                                MOVE
-                                            </div>
-                                            <div class="col-md-1">
-                                                INCLUDE
-                                            </div>
-                                            <div class="col-md-1">
-                                                HAVE
-                                            </div>
-                                            <div class="col-md-1">
-                                                GROW
-                                            </div>
-                                            <div class="col-md-1">
-                                                NEED
-                                            </div>
-                                            <div class="col-md-1">
-                                                USE
-                                            </div>
+                                        </h4></br></br>
+                                        <div class="col-md-1">                                            
+                                            <p class="blue "> <strong>WELCOME</strong></p>                                            
+                                        </div>
+                                        <div class="col-md-1">                                            
+                                            <p class="blue "> <strong>WORK</strong></p>                                            
+                                        </div>
+                                        <div class="col-md-1">                                            
+                                            <p class="blue "> <strong>MOVE</strong></p>                                            
+                                        </div>
+                                        <div class="col-md-1">                                            
+                                            <p class="blue "> <strong>INCLUDE</strong></p>                                            
+                                        </div>
+                                        <div class="col-md-1">                                            
+                                            <p class="blue "> <strong>HAVE</strong></p>                                            
+                                        </div>
+                                        <div class="col-md-1">                                            
+                                            <p class="blue "> <strong>GROW</strong></p>                                            
+                                        </div>
+                                        <div class="col-md-1">                                            
+                                            <p class="blue "> <strong>NEED</strong></p>                                            
+                                        </div>
+                                        <div class="col-md-1">                                            
+                                            <p class="blue "> <strong>USE</strong></p>                                            
+                                        </div>
                                             <h4 class="blue" style="margin-top:50px;"> <strong> 2. CONVERSATION </strong> 
                                             <audio controls controlsList="nodownload">
                                                         <source src="<?php echo base_url(); ?>assets/audio/unit1/conversation/conversation.ogg" type="audio/ogg">
